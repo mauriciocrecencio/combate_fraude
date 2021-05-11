@@ -1,5 +1,21 @@
-import express from "express";
+import express from 'express'
+import 'reflect-metadata'
+import rateLimit from 'express-rate-limit'
 
-const app = express();
+import './database/connect'
+import routes from './routes'
 
-app.listen(3000, () => console.log("Server is running!"));
+const limiter = rateLimit({
+  windowMs: 40000,
+  max: 5,
+  message: { message: 'Too many requests!!!', status: 429 },
+  skipFailedRequests: true,
+})
+
+const app = express()
+
+app.use(limiter)
+app.use(express.json())
+app.use(routes)
+
+app.listen(3000, () => console.log('Server is running!'))
