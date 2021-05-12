@@ -28,7 +28,7 @@ export const get = async (req: Request, res: Response) => {
   }
 
   if (fetchedCompanyData.count === 0) {
-    return res.status(200).json({ message: `No company was found with CNPJ: ${cnpj}` })
+    return res.status(400).json({ message: `No company was found with CNPJ: ${cnpj}` })
   }
   const fetchedCompany = fetchedCompanyData.results[0]
   const partners = await getPartners(cnpj)
