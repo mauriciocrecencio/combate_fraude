@@ -5,7 +5,7 @@ import { Router } from 'express'
 const routes = Router()
 
 routes.get('/company/updated/:cnpj', getUpdatedCompany)
-routes.get('/company/cache/:cnpj', getCachedCompany)
+routes.get('/company/cached/:cnpj', getCachedCompany)
 routes.get('/', (req, res) =>
   res.status(400).json({
     message: 'Invalid route',
