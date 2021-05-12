@@ -1,0 +1,170 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title":"Combate a Fraude Documentation",
+    "description": "This is an API make with Node.js and MongoDB",
+    "version": "1.0.0",
+    "contact": {
+      "email": "mauriciocrecencio98@gmail.com"
+    }
+  },
+  "paths": {
+    "/company/cached/:cnpj": {
+      "get": {
+        "tags": ["Company"],
+        "description": "First it will check if there is a company with this cnpj on the database, if there is not, it will get the company data in Brasil.io API, and with the returned data, it will save them in in the database.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "cnpj": {
+                    "type": "string"
+                  },
+                  "razao_social":{
+                    "type": "string"
+                  },
+                  "uf":{
+                    "type": "string"
+                  },
+                  "qsa":{
+                    "type": "array",
+                    "items": {
+                      "type":"object",
+                      "properties": {
+                        "cpf_cnpj_socio": {
+                          "type": "string"
+                        },
+                        "nome_socio": {
+                          "type": "string"
+                        },
+                        "qualificacao_socio": {
+                          "type": "string"
+                        },
+                        "tipo_socio": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "example":{
+                  "company": {
+                    "cnpj": "string",
+                    "razao_social": "string",
+                    "uf": "string",
+                    "qsa": [
+                      {
+                        "cpf_cnpj_socio": "string",
+                        "nome_socio": "string",
+                        "qualificacao_socio": "string",
+                        "tipo_socio": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Company object"
+          },
+          "400": {
+            "description": "No company was found with this CNPJ"
+          },
+          "401": {
+            "description": "Make sure the value is a maximum of 14 characters"
+          }
+        }
+      }
+    },
+    "/company/updated/:cnpj": {
+      "get": {
+        "tags": ["Company"],
+        "description": "It will always get the updated company data on Brasil.io API, even if the company already exists in the database, and with the returned data, it will save or update the database.",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "cnpj": {
+                    "type": "string"
+                  },
+                  "razao_social":{
+                    "type": "string"
+                  },
+                  "uf":{
+                    "type": "string"
+                  },
+                  "qsa":{
+                    "type": "array",
+                    "items": {
+                      "type":"object",
+                      "properties": {
+                        "cpf_cnpj_socio": {
+                          "type": "string"
+                        },
+                        "nome_socio": {
+                          "type": "string"
+                        },
+                        "qualificacao_socio": {
+                          "type": "string"
+                        },
+                        "tipo_socio": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                "example":{
+                  "company": {
+                    "cnpj": "string",
+                    "razao_social": "string",
+                    "uf": "string",
+                    "qsa": [
+                      {
+                        "cpf_cnpj_socio": "string",
+                        "nome_socio": "string",
+                        "qualificacao_socio": "string",
+                        "tipo_socio": "string"
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Company object"
+          },
+          "400": {
+            "description": "No company was found with this CNPJ"
+          },
+          "401": {
+            "description": "Make sure the value is a maximum of 14 characters"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "specification": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description":{
+          "type": "string"
+        }
+      }
+    }
+  }
+}
