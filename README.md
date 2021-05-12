@@ -22,20 +22,53 @@ npm start || yarn start
 
 ## API Routes
 
-> É necessário enviar algum **CNPJ** válido em ambas as rotas.
+ É necessário enviar algum **CNPJ** válido em ambas as rotas.
 
-```GET /company/updated/:cnpj```
-#### /company/updated/06037792000155
+### GET ```/company/cached/:cnpj```
+> É verificado se esse CNPJ existe no banco de dados, se sim, é retornado os dados, caso ao contrário, é feita uma consulta na API do [Brasil.io](https://brasil.io/home/) e é salvo a empresa no banco.
 
-### Response
+#### Response
 
-```GET /company/cache/:cnpj```
+```json
+{
+  "company": {
+    "cnpj": "string",
+    "razao_social": "string",
+    "uf": "string",
+    "qsa": [
+      {
+        "cpf_cnpj_socio": "string",
+        "nome_socio": "string",
+        "qualificacao_socio": "string",
+        "tipo_socio": "string"
+      }
+    ]
+  }
+}
+```
 
-### Requesição GET
-É necessário enviar algum CNPJ válido.
+### GET ```/company/updated/:cnpj```
+Independente de exisitr o CNPJ no banco de dados ou não, é feita uma nova consulta no [Brasil.io](https://brasil.io/home/) e o banco é salvo/atualizado com os dados mais recentes.
+
+#### Response
+
+```json
+{
+  "company": {
+    "cnpj": "string",
+    "razao_social": "string",
+    "uf": "string",
+    "qsa": [
+      {
+        "cpf_cnpj_socio": "string",
+        "nome_socio": "string",
+        "qualificacao_socio": "string",
+        "tipo_socio": "string"
+      }
+    ]
+  }
+}
+```
 
 
-
-
-/company/cache/:cnpj
 
