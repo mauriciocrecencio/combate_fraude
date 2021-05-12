@@ -69,6 +69,9 @@ Independente de exisitr o CNPJ no banco de dados ou não, é feita uma nova cons
   }
 }
 ```
+### GET ```/api-docs```
+Acessa a documentação da API no Swagger.
+
 
 
 
