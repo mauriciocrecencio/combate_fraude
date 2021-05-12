@@ -1,13 +1,13 @@
 import { Document } from 'mongoose'
 
-export default interface ICompany extends Document {
+export interface ICompany extends Document {
   cnpj: string
   uf: string
   razao_social: string
-  qsa: Partner[]
+  qsa: IPartner[]
 }
 
-interface Partner {
+export interface IPartner {
   cpf_cnpj_socio: string
   nome_socio: string
   qualificacao_socio: string
