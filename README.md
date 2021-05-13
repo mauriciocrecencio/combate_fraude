@@ -1,5 +1,5 @@
 # Combate à fraude
-
+Eu nunca tinha trabalhado com MongoDB e Mongoose antes, gostei muito, obrigado pelo teste! :)
 Esse projeto é uma API feita em **Node.JS** e **MongoDB**, onde o usuário pode pesquisar por empresas utilizando o CNPJ.
 
 A consulta da **empresa** e de seus respectivos **sócios** é feita na API do [Brasil.io](https://brasil.io/home/)
