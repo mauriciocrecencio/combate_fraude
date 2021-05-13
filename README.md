@@ -4,6 +4,8 @@ Esse projeto é uma API feita em **Node.JS** e **MongoDB**, onde o usuário pode
 
 A consulta da **empresa** e de seus respectivos **sócios** é feita na API do [Brasil.io](https://brasil.io/home/)
 
+> Entendo que o Auth Token da API do [Brasil.io](https://brasil.io/home/) deveria estar escondido em um .env por se tratar de um dado sensível, mas para facilitar o teste do projeto, deixei ela explícita no código.
+
 ## Instalação
 
 Certifique-se de ter instalado em sua máquina **npm** ou **yarn**. 
@@ -69,6 +71,9 @@ Independente de exisitr o CNPJ no banco de dados ou não, é feita uma nova cons
   }
 }
 ```
+### GET ```/api-docs```
+Acessa a documentação da API no Swagger.
+
 
 
 
