@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import ICompany from 'src/interfaces/company'
+import { ICompany } from 'src/interfaces/company'
 
 const companySchema = new mongoose.Schema({
   cnpj: String,
