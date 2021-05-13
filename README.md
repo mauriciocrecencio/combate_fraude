@@ -1,4 +1,4 @@
-> Eu nunca tinha trabalhado com MongoDB e Mongoose antes, gostei muito, obrigado pelo teste! :)
+> Eu nunca tinha trabalhado com MongoDB e Mongoose antes, gostei muito, obrigado pelo teste! :)```
 
 
 # Combate à fraude
@@ -7,7 +7,10 @@ Esse projeto é uma API feita em **Node.JS** e **MongoDB**, onde o usuário pode
 
 A consulta da **empresa** e de seus respectivos **sócios** é feita na API do [Brasil.io](https://brasil.io/home/)
 
-> Entendo que o Auth Token da API do [Brasil.io](https://brasil.io/home/) deveria estar escondido em um .env por se tratar de um dado sensível, mas para facilitar o teste do projeto, deixei ela explícita no código.
+### Considerações
+
+1. Entendo que o Auth Token da API do [Brasil.io](https://brasil.io/home/) deveria estar escondido em um .env por se tratar de um dado sensível, mas para facilitar o teste do projeto, deixei ela explícita no código.
+2. Eu não sabia se deveria retirar ou não **_id** e o **__v** da Collection. Li em alguns lugares que o Mongo utilizava-os para gerenciar melhor o banco de dados, então optei por deixar.
 
 ## Instalação
 
