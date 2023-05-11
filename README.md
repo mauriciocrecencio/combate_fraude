@@ -1,4 +1,3 @@
-> Eu nunca tinha trabalhado com MongoDB e Mongoose antes, gostei muito, obrigado pelo teste! :)```
 
 
 # Combate à fraude
